@@ -1,0 +1,14 @@
+const signs=[
+{n:1,title:'乾元啟運',omen:'上上籤',poem:['雲開日出見青天','萬里長風送客船','守正自然逢吉兆','功名財祿在年前'],meaning:'此籤主先難後易，宜守正、宜耐心。當下所求已有轉機，切勿因一時遲滯而改初心。',career:'事業漸入佳境，適合整理方向、主動爭取。',love:'真誠相待可解誤會，單身者有新緣。',wealth:'正財穩，偏財宜保守。'},
+{n:36,title:'月照松門',omen:'中吉籤',poem:['月照松門夜氣清','一心守定待天明','莫因小阻生疑慮','自有貴人暗裏迎'],meaning:'此籤重在定心。眼前雖有不明朗之處，但局勢正在暗中改善，宜少躁進、多觀察。',career:'先完成手中之事，後續有人相助。',love:'關係需要耐心溝通，不宜冷戰。',wealth:'支出宜節制，月底漸穩。'},
+{n:72,title:'地脈回春',omen:'吉籤',poem:['寒土逢陽草木生','舊枝新蕊報春聲','時來不必多憂慮','一步平安一步成'],meaning:'此籤象徵復甦與重新開始。過往阻力逐步消退，適合重整計畫、恢復行動。',career:'舊案可重啟，新方向可小步試行。',love:'舊結可解，關係有修復機會。',wealth:'財運回升，但仍須循序累積。'},
+{n:108,title:'朱雀傳書',omen:'中上籤',poem:['朱雀銜書入畫堂','遠人消息慰愁腸','言辭和順開新路','所願終能見吉祥'],meaning:'消息、文書、溝通為此籤關鍵。主動聯絡、說清需求，往往能打開局面。',career:'適合提案、面試、談合作。',love:'坦白表達有利感情進展。',wealth:'合約與帳目須細看。'},
+{n:144,title:'太和歸一',omen:'上吉籤',poem:['天地交和百福臻','陰陽順遂萬象新','此心若守中和道','自得安康祿位真'],meaning:'此籤為圓滿歸一之象。所求可成，但仍要守中和、知進退，福分方能長久。',career:'大方向正確，可穩步定局。',love:'關係趨於穩定，適合談長遠。',wealth:'財祿漸豐，宜留有餘地。'}];
+const screens=[...document.querySelectorAll('.screen')];
+const byId=id=>document.getElementById(id);
+let current=signs[0];
+function show(id){screens.forEach(s=>s.classList.toggle('active',s.id===id));window.scrollTo(0,0)}
+function render(s){current=s;byId('signNum').textContent=`第 ${String(s.n).padStart(3,'0')} 籤`;byId('signTitle').textContent=s.title;byId('omen').textContent=s.omen;byId('poem').innerHTML=s.poem.map(x=>`<span>${x}</span>`).join('');byId('meaning').textContent=s.meaning;byId('detailTitle').textContent=`第${s.n}籤・${s.title}`;byId('detailMeaning').textContent=s.meaning;byId('career').textContent=s.career;byId('love').textContent=s.love;byId('wealth').textContent=s.wealth;show('result')}
+function pick(){render(signs[Math.floor(Math.random()*signs.length)])}
+function lookup(){const n=Math.max(1,Math.min(144,Number(byId('lookupInput').value)||1));const exact=signs.find(s=>s.n===n);render(exact||{...signs[n%signs.length],n,title:`第${n}籤`,meaning:'此為預覽資料。完整一百四十四籤內容將在下一階段逐步補齊。'})}
+byId('drawBtn').addEventListener('click',pick);byId('lookupBtn').addEventListener('click',lookup);byId('lookupInput').addEventListener('keydown',e=>{if(e.key==='Enter')lookup()});byId('homeBack').addEventListener('click',()=>show('home'));byId('detailBack').addEventListener('click',()=>show('result'));byId('detailBtn').addEventListener('click',()=>show('detail'));byId('againBtn').addEventListener('click',pick);byId('saveBtn').addEventListener('click',()=>{localStorage.setItem('tuting-last',JSON.stringify(current));const n=byId('notice');n.classList.add('show');setTimeout(()=>n.classList.remove('show'),1400)});const saved=localStorage.getItem('tuting-last');if(saved){try{current=JSON.parse(saved)}catch{}}
