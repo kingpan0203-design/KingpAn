@@ -3,54 +3,71 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#1b100b">
+<meta name="theme-color" content="#17100c">
 <title>土亭祕訣｜文武閣</title>
-<link rel="stylesheet" href="css/main.css?v=11">
+<link rel="stylesheet" href="css/main.css?v=12">
 </head>
 <body>
 <main>
 <section id="home" class="screen home active">
-  <div class="home-card">
-    <div class="seal">文武<br>閣</div>
+  <div class="temple-frame" aria-hidden="true"></div>
+  <div class="home-inner">
+    <div class="brand-plaque">文武閣</div>
+    <div class="incense" aria-hidden="true"><i></i><i></i><i></i></div>
+    <p class="eyebrow">土亭一脈・誠心感應</p>
     <h1>土亭祕訣</h1>
-    <p class="tag">誠心默念所問之事・一念感通</p>
-    <button id="drawBtn" class="draw-btn">誠心求籤</button>
+    <p class="tag">靜心默念所問之事，再啟籤冊</p>
+    <button id="drawBtn" class="draw-btn"><span>誠心請籤</span></button>
     <div class="lookup">
       <input id="lookupInput" type="number" min="1" max="144" inputmode="numeric" placeholder="輸入籤號 1–144">
       <button id="lookupBtn">查籤</button>
     </div>
-    <p class="hint">目前為 V11 預覽版｜完整一百四十四籤將逐步補齊</p>
+    <p class="hint">《土亭祕訣》數位籤冊・文武閣</p>
   </div>
 </section>
+
 <section id="result" class="screen result">
   <button id="homeBack" class="back">返回</button>
-  <article class="scroll">
-    <div id="signNum" class="num">第 001 籤</div>
-    <h2 id="signTitle" class="title">乾元啟運</h2>
-    <div id="omen" class="omen">上上籤</div>
-    <div id="poem" class="poem"></div>
-    <p id="meaning" class="meaning"></p>
-    <div class="actions">
-      <button id="againBtn">再求一籤</button>
-      <button id="saveBtn">收藏此籤</button>
-      <button id="detailBtn" class="primary">詳細解籤</button>
-    </div>
-  </article>
+  <div class="book-stage">
+    <article class="scroll">
+      <div class="book-mark">文武閣藏</div>
+      <div class="page page-left">
+        <div id="signNum" class="num">第 001 籤</div>
+        <div id="omen" class="omen">上上籤</div>
+        <h2 id="signTitle" class="title">乾元啟運</h2>
+        <div class="red-seal">土亭<br>祕訣</div>
+      </div>
+      <div class="page page-right">
+        <div id="poem" class="poem"></div>
+        <div class="divider"><span>解曰</span></div>
+        <p id="meaning" class="meaning"></p>
+        <div class="actions">
+          <button id="againBtn">再求一籤</button>
+          <button id="saveBtn">收藏</button>
+          <button id="detailBtn" class="primary">詳解</button>
+        </div>
+      </div>
+    </article>
+  </div>
 </section>
+
 <section id="detail" class="screen detail">
   <button id="detailBack" class="back">返回籤文</button>
   <article class="article">
-    <div class="seal">文武<br>閣</div>
-    <h2 id="detailTitle">詳細解籤</h2>
-    <h3>籤意</h3><p id="detailMeaning"></p>
-    <h3>事業</h3><p id="career"></p>
-    <h3>感情</h3><p id="love"></p>
-    <h3>財運</h3><p id="wealth"></p>
-    <h3>文武閣提示</h3><p>籤文用以觀勢與省心，重大決定仍應結合現實條件、專業意見與自身行動。</p>
+    <div class="article-head">
+      <span>文武閣藏本</span>
+      <div class="seal small">文武<br>閣</div>
+      <h2 id="detailTitle">詳細解籤</h2>
+    </div>
+    <section><h3>籤意</h3><p id="detailMeaning"></p></section>
+    <section><h3>事業</h3><p id="career"></p></section>
+    <section><h3>感情</h3><p id="love"></p></section>
+    <section><h3>財運</h3><p id="wealth"></p></section>
+    <section><h3>文武閣提示</h3><p>籤文用以觀勢與省心，重大決定仍應結合現實條件、專業意見與自身行動。</p></section>
   </article>
 </section>
 </main>
 <div id="notice" class="notice">已收藏於此裝置</div>
-<script src="js/app.js?v=11" defer></script>
+<script src="js/app.js?v=12" defer></script>
 </body>
 </html>
