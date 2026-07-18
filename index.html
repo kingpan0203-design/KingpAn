@@ -5,6 +5,52 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#1b100b">
 <title>土亭祕訣｜文武閣</title>
-<style>
-:root{--ink:#2c2119;--red:#8d2b21;--paper:#ead8b3;--paper2:#f5e9ce;--gold:#b98b49;--wood:#241711}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;font
+<link rel="stylesheet" href="css/main.css?v=11">
+</head>
+<body>
+<main>
+<section id="home" class="screen home active">
+  <div class="home-card">
+    <div class="seal">文武<br>閣</div>
+    <h1>土亭祕訣</h1>
+    <p class="tag">誠心默念所問之事・一念感通</p>
+    <button id="drawBtn" class="draw-btn">誠心求籤</button>
+    <div class="lookup">
+      <input id="lookupInput" type="number" min="1" max="144" inputmode="numeric" placeholder="輸入籤號 1–144">
+      <button id="lookupBtn">查籤</button>
+    </div>
+    <p class="hint">目前為 V11 預覽版｜完整一百四十四籤將逐步補齊</p>
+  </div>
+</section>
+<section id="result" class="screen result">
+  <button id="homeBack" class="back">返回</button>
+  <article class="scroll">
+    <div id="signNum" class="num">第 001 籤</div>
+    <h2 id="signTitle" class="title">乾元啟運</h2>
+    <div id="omen" class="omen">上上籤</div>
+    <div id="poem" class="poem"></div>
+    <p id="meaning" class="meaning"></p>
+    <div class="actions">
+      <button id="againBtn">再求一籤</button>
+      <button id="saveBtn">收藏此籤</button>
+      <button id="detailBtn" class="primary">詳細解籤</button>
+    </div>
+  </article>
+</section>
+<section id="detail" class="screen detail">
+  <button id="detailBack" class="back">返回籤文</button>
+  <article class="article">
+    <div class="seal">文武<br>閣</div>
+    <h2 id="detailTitle">詳細解籤</h2>
+    <h3>籤意</h3><p id="detailMeaning"></p>
+    <h3>事業</h3><p id="career"></p>
+    <h3>感情</h3><p id="love"></p>
+    <h3>財運</h3><p id="wealth"></p>
+    <h3>文武閣提示</h3><p>籤文用以觀勢與省心，重大決定仍應結合現實條件、專業意見與自身行動。</p>
+  </article>
+</section>
+</main>
+<div id="notice" class="notice">已收藏於此裝置</div>
+<script src="js/app.js?v=11" defer></script>
+</body>
+</html>
