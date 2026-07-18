@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#17100c">
 <title>土亭祕訣｜文武閣</title>
-<link rel="stylesheet" href="css/main.css?v=13">
+<link rel="stylesheet" href="css/main.css?v=14">
 </head>
 <body>
 <main>
@@ -17,16 +17,16 @@
 <p class="eyebrow">土亭一脈・誠心感應</p>
 <h1>土亭祕訣</h1>
 <p class="tag">靜心默念所問之事，再啟籤冊</p>
-<button id="drawBtn" class="draw-btn"><span class="icon">🪷</span><span>誠心請籤</span></button>
+<button id="drawBtn" class="draw-btn"><img class="icon" src="assets/icons/draw.svg"><span>誠心請籤</span></button>
 <div class="lookup">
 <input id="lookupInput" type="number" min="1" max="144" inputmode="numeric" placeholder="輸入籤號 1–144">
-<button id="lookupBtn"><span class="icon">📜</span> 查籤</button>
+<button id="lookupBtn"><img class="icon" src="assets/icons/search.svg"><span>查籤</span></button>
 </div>
 <p class="hint">《土亭祕訣》數位籤冊・文武閣</p>
 </div>
 </section>
 <section id="result" class="screen result">
-<button id="homeBack" class="back"><span class="icon">←</span> 返回</button>
+<button id="homeBack" class="back"><img class="icon" src="assets/icons/back.svg"><span>返回</span></button>
 <div class="book-stage">
 <article class="scroll">
 <div class="book-mark">文武閣藏</div>
@@ -43,14 +43,14 @@
 <div class="actions">
 <button id="againBtn">再求一籤</button>
 <button id="saveBtn">收藏</button>
-<button id="detailBtn" class="primary"><span class="icon">📖</span> 詳解</button>
+<button id="detailBtn" class="primary"><img class="icon" src="assets/icons/detail.svg"><span>詳解</span></button>
 </div>
 </div>
 </article>
 </div>
 </section>
 <section id="detail" class="screen detail">
-<button id="detailBack" class="back"><span class="icon">←</span> 返回籤文</button>
+<button id="detailBack" class="back"><img class="icon" src="assets/icons/back.svg"><span>返回籤文</span></button>
 <article class="article">
 <div class="article-head"><span>文武閣藏本</span><div class="seal small">文武<br>閣</div><h2 id="detailTitle">詳細解籤</h2></div>
 <section><h3>籤意</h3><p id="detailMeaning"></p></section>
@@ -62,6 +62,6 @@
 </section>
 </main>
 <div id="notice" class="notice">已收藏於此裝置</div>
-<script src="js/app.js?v=13" defer></script>
+<script src="js/app.js?v=14" defer></script>
 </body>
 </html>
